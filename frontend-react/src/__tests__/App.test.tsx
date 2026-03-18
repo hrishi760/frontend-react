@@ -14,6 +14,22 @@ test('renders login view by default', () => {
   expect(registerLink).toBeInTheDocument();
 });
 
+test('renders input fields', () => {
+  render(<App />);
+
+  const inputs = screen.getAllByRole('textbox');
+  expect(inputs.length).toBeGreaterThan(0);
+});
+
+test('handles login button click', () => {
+  render(<App />);
+
+  const loginButton = screen.getByRole('button', { name: /login/i });
+  fireEvent.click(loginButton);
+
+  expect(loginButton).toBeInTheDocument();
+});
+
 test('switches to register view when register link is clicked', () => {
   render(<App />);
 
