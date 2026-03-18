@@ -18,9 +18,14 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Dependencies
-        working-directory: frontend-react
+      - name: Install dependencies
         run: npm install
+        working-directory: frontend-react
+        
+      - name: Run tests with coverage
+        run: CI=true npm test -- --coverage
+        working-directory: frontend-react
+        continue-on-error: true
         
       - name: Build App
         working-directory: frontend-react
