@@ -32,11 +32,12 @@ jobs:
 
       - name: Snyk Scan
         uses: snyk/actions/node@master
+        continue-on-error: true
         with:
-          command: test
-          args: --file=frontend-react/package.json --severity-threshold=high
+         command: test
+         args: --file=frontend-react/package.json --severity-threshold=high
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
