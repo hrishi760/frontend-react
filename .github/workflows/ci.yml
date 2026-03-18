@@ -44,7 +44,7 @@ jobs:
         with:
          projectBaseDir: frontend-react
          args: >
-          -Dsonar.projectKey=hrishi760_frontend-react
+          -Dsonar.projectKey=hrishi760_frontend
           -Dsonar.organization=hrishi760
         env:
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
